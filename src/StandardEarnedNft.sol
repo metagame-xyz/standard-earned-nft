@@ -68,12 +68,12 @@ contract standardEarnedNft is ERC721, Ownable {
         );
         return
             string(
-                abi.encodePacked(metadataFolderURI, Strings.toString(tokenId))
+                abi.encodePacked(metadataFolderURI, address(this), "/", Strings.toString(tokenId))
             );
     }
 
     function contractURI() public view returns (string memory) {
-        return openseaContractMetadataURL;
+        return abi.encodePacked(openseaContractMetadataURL, "/", address(this));
     }
 
     function mintWithSignature(
@@ -90,7 +90,7 @@ contract standardEarnedNft is ERC721, Ownable {
             "only 1 mint per wallet address"
         );
 
-        require(msg.value == price, string.concat("Wrong msg.value. Price: ", Strings.toString(price)));
+        require(msg.value == price, abi.encodePacked("Wrong msg.value. Price: ", Strings.toString(price)));
         
 
         bytes32 payloadHash = keccak256(abi.encode(DOMAIN_SEPARATOR, minter));
