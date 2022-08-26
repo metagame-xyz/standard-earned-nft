@@ -16,10 +16,10 @@ ETHERSCAN_KEY=<YOUR_ETHERSCAN_KEY>
 
 ## Deploy to rinkeby
 
-* Deploy the contract by running `forge script script/deploy.s.sol:DeployWhitehat --rpc-url $RINKEBY_RPC_URL --private-key $PRIVATE_KEY --broadcast --etherscan-api-key $ETHERSCAN_KEY -vvvv`
-* Wait a minute or two, and then verify the contract on Etherscan by running `forge script script/deploy.s.sol:DeployWhitehat --rpc-url $RINKEBY_RPC_URL --private-key $PRIVATE_KEY --verify --etherscan-api-key $ETHERSCAN_KEY -vvvv`
+* Deploy the contract by running `forge script script/deploy.s.sol:DeployStandardEarnedNft --rpc-url $RINKEBY_RPC_URL --private-key $PRIVATE_KEY --broadcast --etherscan-api-key $ETHERSCAN_KEY -vvvv`
+* Wait a minute or two, and then verify the contract on Etherscan by running `forge script script/deploy.s.sol:DeployStandardEarnedNft --rpc-url $RINKEBY_RPC_URL --private-key $PRIVATE_KEY --verify --etherscan-api-key $ETHERSCAN_KEY -vvvv`
 
 ## Deploy to mainnet
 
-* Deploy the contract by running `forge script script/deploy.s.sol:DeployWhitehat --rpc-url $MAINNET_RPC_URL --private-key $PRIVATE_KEY --broadcast --etherscan-api-key $ETHERSCAN_KEY -vvvv`
-* Wait a minute or two, and then verify the contract on Etherscan by running `forge script script/deploy.s.sol:DeployWhitehat --rpc-url $MAINNET_RPC_URL --private-key $PRIVATE_KEY --verify --etherscan-api-key $ETHERSCAN_KEY -vvvv`
+* Deploy the contract by running `forge script script/deploy.s.sol:DeployStandardEarnedNft --rpc-url $MAINNET_RPC_URL --private-key $PRIVATE_KEY --broadcast --etherscan-api-key $ETHERSCAN_KEY -vvvv`
+* Wait a minute or two, and then verify the contract on Etherscan by running `forge script script/deploy.s.sol:DeployStandardEarnedNft --rpc-url $MAINNET_RPC_URL --private-key $PRIVATE_KEY --verify --etherscan-api-key $ETHERSCAN_KEY -vvvv`

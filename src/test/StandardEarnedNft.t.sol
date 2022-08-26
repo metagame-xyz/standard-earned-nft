@@ -2,7 +2,7 @@
 pragma solidity 0.8.13;
 
 import "forge-std/Test.sol";
-import "../Whitehat.sol";
+import "../StandardEarnedNft.sol";
 import "forge-std/console.sol";
 
 contract whitehatTest is Test {
@@ -24,11 +24,11 @@ contract whitehatTest is Test {
         0x68eecb853b5ffdd652bc2708840375d7faae077c0fdc01e9733d6690d343a922;
     uint8 constant v2 = 28;
 
-    whitehat whitehatContract;
+    standardEarnedNft whitehatContract;
 
     constructor() {
         vm.prank(owner);
-        whitehatContract = new whitehat(
+        whitehatContract = new standardEarnedNft(
             "Whitehat",
             "WHTHT",
             "NOT_IMPLEMENTED",
@@ -93,7 +93,7 @@ contract whitehatTest is Test {
 
     function testCannotOverpay() public {
         vm.deal(minter, 10000000000000000);
-        vm.expectRevert(bytes("This mint is free"));
+        vm.expectRevert(bytes("Wrong msg.value. Price: 0.0"));
         vm.prank(minter);
         whitehatContract.mintWithSignature{value: 10000000000000000}(
             minter,
